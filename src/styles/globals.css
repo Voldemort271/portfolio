@@ -1,6 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-body: var(--font-hk), ui-sans-serif, system-ui, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-title: var(--font-instrument), ui-sans-serif, system-ui, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+html {
+  @apply bg-zinc-100 text-zinc-950 text-balance text-base font-normal leading-tight overscroll-none;
+}
+
+::-moz-selection {
+  @apply bg-sky-300;
+  text-shadow: none;
+}
+
+::selection {
+  @apply bg-sky-300;
+  text-shadow: none;
+}
+
+hr {
+  @apply block h-px border-0 border-t border-zinc-600 my-4 mx-0 p-0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  @apply align-middle;
+}
+
+fieldset {
+  @apply border-0 m-0 p-0;
+}
+
+textarea {
+  @apply resize-y;
 }
