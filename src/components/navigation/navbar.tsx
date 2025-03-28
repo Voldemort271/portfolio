@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { MoreVertical } from "lucide-react";
 
 const MenuToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +10,9 @@ const MenuToggle = () => {
     <div className="flex items-center gap-2.5">
       <div className="font-title text-sm font-medium text-zinc-600 uppercase">
         menu
+      </div>
+      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-zinc-950/[0.2]">
+        <MoreVertical />
       </div>
     </div>
   );

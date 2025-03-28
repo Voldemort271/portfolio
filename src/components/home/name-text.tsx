@@ -19,7 +19,7 @@ const NameText = () => {
   }, []);
 
   return (
-    <div className="font-title mx-0 flex items-center justify-center overflow-clip text-center leading-none font-medium uppercase md:mx-5 lg:mx-12">
+    <div className="font-title mx-0 flex items-center justify-center overflow-clip text-center leading-none font-semibold uppercase md:mx-5 lg:mx-12">
       <motion.div
         ref={textRef}
         initial={{ y: "100%", opacity: 0.5 }}
