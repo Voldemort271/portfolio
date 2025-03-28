@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="font-body flex h-screen w-screen flex-col bg-red-400">
+      <main className="font-body flex h-screen w-screen flex-col">
         <Navbar />
         <ProjectsSection />
         <NameText />
