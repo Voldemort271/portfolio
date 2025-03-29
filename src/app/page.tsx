@@ -6,6 +6,7 @@ import NameText from "@/components/home/name-text";
 export default async function Home() {
   // void api.post.getLatest.prefetch();
   // TODO: Prefetch projects
+  // TODO: WebGL carousel
 
   return (
     <HydrateClient>

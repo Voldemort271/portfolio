@@ -35,8 +35,11 @@ const ProjectsSection = ({ delay }: { delay: number }) => {
         <ProjectDetails index={index} key={index} />
       </AnimatePresence>
       <ProjectsCarousel setIndex={setIndex} length={5} parent={parent} />
-      <div className="text-sm font-semibold text-zinc-600 uppercase">
+      <div className="hidden text-sm font-semibold text-zinc-600 uppercase md:block">
         scroll
+      </div>
+      <div className="block text-sm font-semibold text-zinc-600 uppercase md:hidden">
+        swipe
       </div>
     </motion.div>
   );

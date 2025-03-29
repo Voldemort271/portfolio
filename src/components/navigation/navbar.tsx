@@ -1,18 +1,21 @@
 "use client";
 
 import React, { useState } from "react";
-import { MoreVertical } from "lucide-react";
+import NavLogo from "@/components/navigation/nav-logo";
 
 const MenuToggle = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="flex items-center gap-2.5">
+    <div
+      className="flex items-center gap-2.5"
+      onClick={() => setToggle(!toggle)}
+    >
       <div className="font-title text-sm font-medium text-zinc-600 uppercase">
         menu
       </div>
       <div className="flex h-12 w-12 items-center justify-center rounded-full border border-zinc-950/[0.2]">
-        <MoreVertical />
+        <NavLogo toggle={toggle} />
       </div>
     </div>
   );
