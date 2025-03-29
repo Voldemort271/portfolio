@@ -11,7 +11,7 @@ export default async function Home() {
     <HydrateClient>
       <main className="font-body flex h-screen w-screen flex-col">
         <Navbar />
-        <ProjectsSection />
+        <ProjectsSection delay={0.1} />
         <NameText />
       </main>
     </HydrateClient>

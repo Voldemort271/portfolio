@@ -5,7 +5,7 @@ import ProjectDetails from "@/components/home/project-details";
 import ProjectsCarousel from "@/components/home/projects-carousel";
 import { AnimatePresence, motion } from "motion/react";
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ delay }: { delay: number }) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [parent, setParent] = useState<Element | null>(null);
   const [index, setIndex] = useState(0);
@@ -26,6 +26,7 @@ const ProjectsSection = () => {
         transition: {
           duration: 0.5,
           ease: [0.5, 1, 0.89, 1],
+          delay,
         },
       }}
       ref={parentRef}
