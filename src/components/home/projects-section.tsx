@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ProjectDetails from "@/components/home/project-details";
 import ProjectsCarousel from "@/components/home/projects-carousel";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 const ProjectsSection = () => {
   const parentRef = useRef<HTMLDivElement>(null);
@@ -17,8 +17,17 @@ const ProjectsSection = () => {
   }, [parentRef]);
 
   return (
-    <div
+    <motion.div
       className="flex h-full flex-col items-center justify-center gap-5"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.5,
+          ease: [0.5, 1, 0.89, 1],
+        },
+      }}
       ref={parentRef}
     >
       <AnimatePresence mode="wait">
@@ -28,7 +37,7 @@ const ProjectsSection = () => {
       <div className="text-sm font-semibold text-zinc-600 uppercase">
         scroll
       </div>
-    </div>
+    </motion.div>
   );
 };
 
