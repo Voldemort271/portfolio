@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProjectDetails from "@/components/home/project-details";
 import ProjectsCarousel from "@/components/home/projects-carousel";
+import { AnimatePresence } from "motion/react";
 
 const ProjectsSection = () => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [parent, setParent] = useState<Element | null>(null);
+  const [index, setIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (parentRef.current) {
       setParent(parentRef.current);
     }
@@ -19,8 +21,10 @@ const ProjectsSection = () => {
       className="flex h-full flex-col items-center justify-center gap-5"
       ref={parentRef}
     >
-      <ProjectDetails />
-      <ProjectsCarousel parent={parent} />
+      <AnimatePresence mode="wait">
+        <ProjectDetails index={index} key={index} />
+      </AnimatePresence>
+      <ProjectsCarousel setIndex={setIndex} length={5} parent={parent} />
       <div className="text-sm font-semibold text-zinc-600 uppercase">
         scroll
       </div>

@@ -1,8 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, {
+  type Dispatch,
+  type SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
@@ -11,8 +17,28 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 const height = 400;
 const width = (16 / 9) * height;
 
-const ProjectsCarousel = ({ parent }: { parent: Element | null }) => {
+interface Props {
+  setIndex: Dispatch<SetStateAction<number>>;
+  length: number;
+  parent: Element | null;
+}
+
+const ProjectsCarousel = ({ parent, setIndex, length }: Props) => {
   const [md, setMd] = useState(true);
+  const [api, setApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setIndex(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setIndex(api.selectedScrollSnap());
+    });
+    console.log(api.selectedScrollSnap());
+  }, [api]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -43,10 +69,11 @@ const ProjectsCarousel = ({ parent }: { parent: Element | null }) => {
             "(min-width: 768px)": { loop: true },
           },
         }}
+        setApi={setApi}
         plugins={[WheelGesturesPlugin({ forceWheelAxis: "y", target: parent })]}
       >
         <CarouselContent className="-ml-12">
-          {Array.from({ length: 5 }).map((_, index) => (
+          {Array.from({ length }).map((_, index) => (
             <CarouselItem
               key={index}
               className="flex justify-center pl-12"
@@ -55,9 +82,7 @@ const ProjectsCarousel = ({ parent }: { parent: Element | null }) => {
               <div
                 className="flex w-full items-center justify-center bg-zinc-950/[0.2]"
                 style={{ height: md ? 300 : height }}
-              >
-                <span className="text-4xl font-semibold">{index + 1}</span>
-              </div>
+              ></div>
             </CarouselItem>
           ))}
         </CarouselContent>
