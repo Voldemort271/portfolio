@@ -1,6 +1,6 @@
 "use client";
 
-import { QueryClientProvider, type QueryClient } from "@tanstack/react-query";
+import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchStreamLink, loggerLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
 import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
@@ -17,9 +17,11 @@ const getQueryClient = () => {
     return createQueryClient();
   }
   // Browser: use singleton pattern to keep the same query client
-  if (!clientQueryClientSingleton) {
-    clientQueryClientSingleton = createQueryClient();
-  }
+  // if (!clientQueryClientSingleton) {
+  //   clientQueryClientSingleton = createQueryClient();
+  // }
+  clientQueryClientSingleton ??= createQueryClient();
+
   return clientQueryClientSingleton;
 };
 
