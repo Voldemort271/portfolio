@@ -11,7 +11,7 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 const height = 400;
 const width = (16 / 9) * height;
 
-const ProjectsCarousel = () => {
+const ProjectsCarousel = ({ parent }: { parent: Element | null }) => {
   const [md, setMd] = useState(true);
 
   useEffect(() => {
@@ -37,10 +37,13 @@ const ProjectsCarousel = () => {
         orientation="horizontal"
         opts={{
           align: "center",
-          loop: true,
-          dragFree: true,
+          loop: false,
+          skipSnaps: true,
+          breakpoints: {
+            "(min-width: 768px)": { loop: true },
+          },
         }}
-        plugins={[WheelGesturesPlugin({ forceWheelAxis: "y" })]}
+        plugins={[WheelGesturesPlugin({ forceWheelAxis: "y", target: parent })]}
       >
         <CarouselContent className="-ml-12">
           {Array.from({ length: 5 }).map((_, index) => (
