@@ -2,20 +2,21 @@
 
 import React, { useState } from "react";
 import NavLogo from "@/components/navigation/nav-logo";
+import NavLabel from "@/components/navigation/nav-label";
 
 const MenuToggle = () => {
   const [toggle, setToggle] = useState(false);
-
+  const [hover, setHover] = useState(false);
   return (
     <div
-      className="flex items-center gap-2.5"
+      className="flex cursor-pointer items-center gap-2.5"
       onClick={() => setToggle(!toggle)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      <div className="font-title text-sm font-medium text-zinc-600 uppercase">
-        menu
-      </div>
+      <NavLabel toggle={toggle} hover={hover} />
       <div className="flex h-12 w-12 items-center justify-center rounded-full border border-zinc-950/[0.2]">
-        <NavLogo toggle={toggle} />
+        <NavLogo toggle={toggle} hover={hover} />
       </div>
     </div>
   );
