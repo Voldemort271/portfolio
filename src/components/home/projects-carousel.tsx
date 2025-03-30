@@ -63,11 +63,8 @@ const ProjectsCarousel = ({ parent, setIndex, length }: Props) => {
         orientation="horizontal"
         opts={{
           align: "center",
-          loop: false,
+          loop: true,
           skipSnaps: true,
-          breakpoints: {
-            "(min-width: 768px)": { loop: true },
-          },
         }}
         setApi={setApi}
         plugins={[WheelGesturesPlugin({ forceWheelAxis: "y", target: parent })]}
