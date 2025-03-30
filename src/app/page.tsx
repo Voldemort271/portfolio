@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="font-body flex h-screen w-screen flex-col">
+      <main className="font-body flex h-dvh w-screen flex-col">
         <Navbar />
         <ProjectsSection delay={0.1} />
         <NameText />
