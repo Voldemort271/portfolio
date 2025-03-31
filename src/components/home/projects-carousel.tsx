@@ -55,7 +55,7 @@ const ProjectsCarousel = ({ parent, setIndex, length }: Props) => {
 
   return (
     <div
-      className="flex w-full cursor-grab justify-center gap-12 select-none"
+      className="flex w-full justify-center gap-12 select-none"
       style={{ height: md ? 300 : height }}
     >
       <Carousel

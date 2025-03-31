@@ -24,7 +24,7 @@ const MenuToggle = () => {
 
 const Navbar = () => {
   return (
-    <div className="relative flex w-full items-center justify-between px-12 py-5">
+    <div className="relative flex w-full items-center justify-between px-5 py-5 md:px-12">
       <div className="font-title text-base font-medium uppercase">
         folio &apos;25
       </div>
