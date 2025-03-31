@@ -3,9 +3,13 @@
 import React, { type Dispatch, type SetStateAction, useState } from "react";
 import { motion } from "motion/react";
 import navLinks, { type navLinkDetails } from "@/lib/nav-links";
+import { usePathname } from "next/navigation";
 
 const NavLink = ({ el, i }: { el: navLinkDetails; i: number }) => {
   const [hover, setHover] = useState(false);
+  const path = usePathname();
+
+  const active = path === el.href;
 
   return (
     <div
@@ -15,12 +19,15 @@ const NavLink = ({ el, i }: { el: navLinkDetails; i: number }) => {
     >
       <motion.div
         initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: hover ? 1 : 0.5, height: hover ? 10 : 2 }}
+        animate={{
+          opacity: hover ? 1 : 0.5,
+          height: hover || active ? 10 : 2,
+        }}
         transition={{
           duration: 0.3,
           ease: [0.25, 1, 0.5, 1],
         }}
-        className="h-[2px] w-full bg-zinc-950"
+        className="w-full bg-zinc-950"
       ></motion.div>
       <motion.div
         initial={{ y: "100%" }}
