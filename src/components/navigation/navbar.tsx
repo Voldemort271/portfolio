@@ -38,7 +38,9 @@ const Navbar = () => {
         folio &apos;25
       </div>
       <MenuToggle toggle={toggle} setToggle={setToggle} />
-      <AnimatePresence mode={"wait"}>{toggle && <NavMenu />}</AnimatePresence>
+      <AnimatePresence mode={"wait"}>
+        {toggle && <NavMenu setToggle={setToggle} />}
+      </AnimatePresence>
     </div>
   );
 };

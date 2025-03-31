@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { type Dispatch, type SetStateAction, useState } from "react";
 import { motion } from "motion/react";
 import navLinks, { type navLinkDetails } from "@/lib/nav-links";
 
@@ -42,11 +42,16 @@ const NavLink = ({ el, i }: { el: navLinkDetails; i: number }) => {
   );
 };
 
-const NavMenu = () => {
+const NavMenu = ({
+  setToggle,
+}: {
+  setToggle: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <>
       <motion.div
         className="absolute top-0 right-0 -z-10 h-dvh w-screen overflow-clip bg-zinc-950/[0.3]"
+        onClick={() => setToggle(false)}
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
