@@ -1,11 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { type Dispatch, type SetStateAction, useState } from "react";
 import NavLogo from "@/components/navigation/nav-logo";
 import NavLabel from "@/components/navigation/nav-label";
+import { AnimatePresence } from "motion/react";
+import NavMenu from "@/components/navigation/nav-menu";
 
-const MenuToggle = () => {
-  const [toggle, setToggle] = useState(false);
+const MenuToggle = ({
+  toggle,
+  setToggle,
+}: {
+  toggle: boolean;
+  setToggle: Dispatch<SetStateAction<boolean>>;
+}) => {
   const [hover, setHover] = useState(false);
   return (
     <div
@@ -23,12 +30,15 @@ const MenuToggle = () => {
 };
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
-    <div className="relative flex w-full items-center justify-between px-5 py-5 md:px-12">
+    <div className="relative z-20 flex w-full items-center justify-between px-5 py-5 md:px-12">
       <div className="font-title text-base font-medium uppercase">
         folio &apos;25
       </div>
-      <MenuToggle />
+      <MenuToggle toggle={toggle} setToggle={setToggle} />
+      <AnimatePresence mode={"wait"}>{toggle && <NavMenu />}</AnimatePresence>
     </div>
   );
 };

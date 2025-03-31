@@ -18,7 +18,7 @@ const ProjectsSection = ({ delay }: { delay: number }) => {
 
   return (
     <motion.div
-      className="flex h-full flex-col items-center justify-center gap-5"
+      className="relative z-0 flex h-full flex-col items-center justify-center gap-5"
       initial={{ opacity: 0, y: 50 }}
       animate={{
         opacity: 1,
