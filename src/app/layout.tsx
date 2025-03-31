@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import { type Metadata } from "next";
 import { Hanken_Grotesk, Instrument_Sans } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
+import Navbar from "@/components/navigation/navbar";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Shubham S Padhi | Developer and Creative Designer",
@@ -25,7 +27,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${instrument.variable} ${hanken.variable}`}>
-      <body>
+      <body className="font-title">
+        <Navbar />
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

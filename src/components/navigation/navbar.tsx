@@ -33,7 +33,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="relative z-20 flex w-full items-center justify-between px-5 py-5 md:px-12">
+    <div className="absolute top-0 left-0 z-20 flex w-full items-center justify-between px-5 py-5 md:px-12">
       <div className="font-title text-base font-medium uppercase">
         folio &apos;25
       </div>

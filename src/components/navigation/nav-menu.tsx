@@ -94,7 +94,7 @@ const NavMenu = ({
         }}
       >
         <nav className="flex h-full w-full flex-col justify-between p-5 sm:p-12">
-          <div className="block max-w-lg overflow-clip text-zinc-600 [@media(max-height:600px)]:h-0">
+          <div className="font-body block max-w-lg overflow-clip text-zinc-600 [@media(max-height:600px)]:h-0">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam
             expedita iste maxime natus provident quas? Blanditiis eligendi,
             explicabo maiores officia quia temporibus totam ullam.
@@ -103,7 +103,7 @@ const NavMenu = ({
             {navLinks.map((el, i) => (
               <NavLink key={i} el={el} i={i} />
             ))}
-            <div className="mt-5 flex flex-row gap-5 overflow-clip text-lg font-medium text-zinc-950">
+            <div className="font-body mt-5 flex flex-row gap-5 overflow-clip text-lg font-medium text-zinc-950">
               <motion.div
                 className="cursor-pointer"
                 initial={{ y: "100%", opacity: 0.5 }}
