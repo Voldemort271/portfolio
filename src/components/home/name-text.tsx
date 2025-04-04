@@ -11,7 +11,7 @@ const NameText = () => {
     if (textRef.current) {
       const fitInstance = fitty(textRef.current, {
         minSize: 16,
-        maxSize: 200,
+        maxSize: 196,
       });
 
       return () => fitInstance?.unsubscribe(); // Cleanup on unmount
