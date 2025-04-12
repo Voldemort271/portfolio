@@ -5,6 +5,7 @@ import { Hanken_Grotesk, Instrument_Sans } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
 import Navbar from "@/components/navigation/navbar";
 import React from "react";
+import ReactLenis from "lenis/react";
 
 export const metadata: Metadata = {
   title: "Shubham S Padhi | Developer and Creative Designer",
@@ -28,8 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${instrument.variable} ${hanken.variable}`}>
       <body className="font-title">
-        <Navbar />
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <ReactLenis root>
+          <Navbar />
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </ReactLenis>
       </body>
     </html>
   );

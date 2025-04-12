@@ -37,7 +37,7 @@ const TitleText = ({ children }: { children: string }) => {
   }, []);
 
   return (
-    <div className="font-title w-full px-5 font-medium uppercase md:px-12">
+    <div className="font-title relative w-full px-5 font-medium uppercase md:px-12">
       <div
         ref={ref}
         className="invisible absolute max-w-[800px] leading-tight"
