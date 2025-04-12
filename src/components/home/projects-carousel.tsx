@@ -38,7 +38,7 @@ const ProjectsCarousel = ({ parent, setIndex, length }: Props) => {
       setIndex(api.selectedScrollSnap());
     });
     console.log(api.selectedScrollSnap());
-  }, [api]);
+  });
 
   useEffect(() => {
     if (typeof window === "undefined") return;

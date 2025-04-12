@@ -19,7 +19,7 @@ const TitleText = ({ children }: { children: string }) => {
       });
 
       const lines = ref.current.querySelectorAll(".line-child");
-      const extracted = Array.from(lines).map((line) => line.textContent || "");
+      const extracted = Array.from(lines).map((line) => line.textContent ?? "");
 
       setContent(extracted);
     }
