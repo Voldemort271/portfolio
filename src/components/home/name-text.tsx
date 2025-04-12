@@ -14,7 +14,7 @@ const NameText = () => {
         maxSize: 196,
       });
 
-      return () => fitInstance?.unsubscribe(); // Cleanup on unmount
+      return () => fitInstance?.unsubscribe();
     }
   }, []);
 
