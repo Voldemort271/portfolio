@@ -4,6 +4,7 @@ import React, { type Dispatch, type SetStateAction, useState } from "react";
 import { motion } from "motion/react";
 import navLinks, { type navLinkDetails } from "@/lib/nav-links";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const NavLink = ({ el, i }: { el: navLinkDetails; i: number }) => {
   const [hover, setHover] = useState(false);
@@ -12,40 +13,42 @@ const NavLink = ({ el, i }: { el: navLinkDetails; i: number }) => {
   const active = path === el.href;
 
   return (
-    <div
-      className="flex w-full cursor-pointer flex-row items-baseline gap-5 overflow-clip uppercase"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{
-          opacity: hover ? 1 : 0.5,
-          height: hover || active ? 10 : 2,
-        }}
-        transition={{
-          duration: 0.3,
-          ease: [0.25, 1, 0.5, 1],
-        }}
-        className="w-full bg-zinc-950"
-      ></motion.div>
-      <motion.div
-        initial={{ y: "100%" }}
-        animate={{ y: 0 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.3 + i * 0.05,
-          ease: [0.25, 1, 0.5, 1],
-        }}
-        className="font-title hidden shrink-0 font-normal sm:block"
-        style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)" }}
+    <Link href={el.href}>
+      <div
+        className="flex w-full cursor-pointer flex-row items-baseline gap-5 overflow-clip text-zinc-950 uppercase"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
-        {el.name}
-      </motion.div>
-      <motion.div className="font-title block shrink-0 text-4xl font-medium sm:hidden">
-        {el.name}
-      </motion.div>
-    </div>
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{
+            opacity: hover ? 1 : 0.5,
+            height: hover || active ? 10 : 2,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: [0.25, 1, 0.5, 1],
+          }}
+          className="w-full bg-zinc-950"
+        ></motion.div>
+        <motion.div
+          initial={{ y: "100%" }}
+          animate={{ y: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.3 + i * 0.05,
+            ease: [0.25, 1, 0.5, 1],
+          }}
+          className="font-title hidden shrink-0 font-normal sm:block"
+          style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)" }}
+        >
+          {el.name}
+        </motion.div>
+        <motion.div className="font-title block shrink-0 text-4xl font-medium sm:hidden">
+          {el.name}
+        </motion.div>
+      </div>
+    </Link>
   );
 };
 
