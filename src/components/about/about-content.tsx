@@ -69,11 +69,57 @@ const AboutContent = ({
             </div>
           </div>
         </div>
-        <div className="h-full w-full bg-red-400">hi</div>
-        <div ref={secondContent} className="h-full w-full bg-red-500">
-          hi
+        <div className="flex h-full w-full flex-col items-end justify-center gap-12 text-right">
+          <div className="font-body max-w-[700px] space-y-5 overflow-y-clip text-base leading-normal text-zinc-950">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Architecto doloremque eum perspiciatis quam quia sit? Aut ipsa
+              nihil perferendis quidem quos! Aspernatur consequatur debitis
+              laborum, libero magnam neque obcaecati! Reiciendis! Aut ipsa nihil
+              perferendis quidem quos! Aspernatur consequatur debitis laborum,
+              libero magnam neque obcaecati! Reiciendis!
+            </motion.p>
+          </div>
         </div>
-        <div className="h-full w-full bg-red-900">hi</div>
+        <div
+          ref={secondContent}
+          className="flex h-full w-full flex-col items-start justify-center gap-12"
+        >
+          <div className="font-body max-w-[700px] space-y-5 overflow-y-clip text-base leading-normal text-zinc-950">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Architecto doloremque eum perspiciatis quam quia sit? Aut ipsa
+              nihil perferendis quidem quos! Aspernatur consequatur debitis
+              laborum, libero magnam neque obcaecati! Reiciendis! Aut ipsa nihil
+              perferendis quidem quos! Aspernatur consequatur debitis laborum,
+              libero magnam neque obcaecati! Reiciendis!
+            </motion.p>
+          </div>
+        </div>
+        <div className="flex h-full w-full flex-col items-end justify-start gap-12 text-right">
+          <div className="font-body max-w-[700px] space-y-5 overflow-y-clip text-base leading-normal text-zinc-950">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Architecto doloremque eum perspiciatis quam quia sit? Aut ipsa
+              nihil perferendis quidem quos! Aspernatur consequatur debitis
+              laborum, libero magnam neque obcaecati! Reiciendis! Aut ipsa nihil
+              perferendis quidem quos! Aspernatur consequatur debitis laborum,
+              libero magnam neque obcaecati! Reiciendis!
+            </motion.p>
+          </div>
+        </div>
       </div>
     </div>
   );
