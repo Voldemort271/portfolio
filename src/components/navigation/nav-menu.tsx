@@ -6,7 +6,15 @@ import navLinks, { type navLinkDetails } from "@/lib/nav-links";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const NavLink = ({ el, i }: { el: navLinkDetails; i: number }) => {
+const NavLink = ({
+  el,
+  i,
+  setToggle,
+}: {
+  el: navLinkDetails;
+  i: number;
+  setToggle: Dispatch<SetStateAction<boolean>>;
+}) => {
   const [hover, setHover] = useState(false);
   const path = usePathname();
 
@@ -18,6 +26,7 @@ const NavLink = ({ el, i }: { el: navLinkDetails; i: number }) => {
         className="flex w-full cursor-pointer flex-row items-baseline gap-5 overflow-clip text-zinc-950 uppercase"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        onClick={() => setToggle(false)}
       >
         <motion.div
           initial={{ opacity: 0, height: 0 }}
@@ -104,7 +113,7 @@ const NavMenu = ({
           </div>
           <motion.div className="flex w-full flex-col gap-5">
             {navLinks.map((el, i) => (
-              <NavLink key={i} el={el} i={i} />
+              <NavLink key={i} el={el} i={i} setToggle={setToggle} />
             ))}
             <div className="font-body mt-5 flex flex-row gap-5 overflow-clip text-lg font-medium text-zinc-950">
               <motion.div
