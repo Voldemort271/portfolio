@@ -69,7 +69,7 @@ const AboutContent = ({
             </div>
           </div>
         </div>
-        <div className="flex h-full w-full flex-col items-end justify-center gap-12 text-right">
+        <div className="flex h-full w-full flex-col items-end justify-center gap-12 py-12 text-right">
           <div className="font-body max-w-[700px] space-y-5 overflow-y-clip text-base leading-normal text-zinc-950">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -84,6 +84,7 @@ const AboutContent = ({
               libero magnam neque obcaecati! Reiciendis!
             </motion.p>
           </div>
+          <div className="block h-full max-h-[400px] w-full self-end bg-zinc-950/[0.2] md:hidden"></div>
         </div>
         <div
           ref={secondContent}
@@ -104,7 +105,7 @@ const AboutContent = ({
             </motion.p>
           </div>
         </div>
-        <div className="flex h-full w-full flex-col items-end justify-start gap-12 text-right">
+        <div className="flex h-full w-full flex-col items-end justify-between gap-12 text-right">
           <div className="font-body max-w-[700px] space-y-5 overflow-y-clip text-base leading-normal text-zinc-950">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -119,6 +120,7 @@ const AboutContent = ({
               libero magnam neque obcaecati! Reiciendis!
             </motion.p>
           </div>
+          <div className="block h-full max-h-[400px] w-full self-end bg-zinc-950/[0.2]"></div>
         </div>
       </div>
     </div>
