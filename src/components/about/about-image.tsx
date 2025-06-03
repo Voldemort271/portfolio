@@ -26,11 +26,9 @@ const DisplayImage = ({ current }: { current: number }) => {
 
 const AboutImage = ({ current }: { current: number }) => {
   return (
-    <div className="hidden aspect-[3/4] h-full max-h-[400px] md:block xl:max-h-[600px]">
-      <AnimatePresence mode="wait">
-        <DisplayImage current={current} key={current} />
-      </AnimatePresence>
-    </div>
+    <AnimatePresence mode="wait">
+      <DisplayImage current={current} key={current} />
+    </AnimatePresence>
   );
 };
 
