@@ -4,7 +4,7 @@ import { AnimatePresence } from "motion/react";
 import ContactForm from "@/components/contact/contact-form";
 
 const ContactContent = () => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   return (
     <div className="h-full w-full">
