@@ -26,10 +26,10 @@ const ContactDetails = ({
           <SocialLink key={i} social={social} />
         ))}
         <div
-          className="font-title w-fit cursor-pointer bg-zinc-950 px-8 py-3 text-base font-semibold text-zinc-100 uppercase"
+          className="font-title w-fit cursor-pointer self-end bg-zinc-950 px-8 py-3 text-base font-semibold text-zinc-100 uppercase"
           onClick={() => setToggle(true)}
         >
-          it&apos;s urgent
+          no it&apos;s urgent
         </div>
       </motion.div>
     </div>
