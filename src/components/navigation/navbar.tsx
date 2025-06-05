@@ -34,9 +34,7 @@ const Navbar = () => {
 
   return (
     <div className="absolute top-0 left-0 z-20 flex w-full items-center justify-between overflow-x-clip px-5 py-5 md:px-12">
-      <div className="font-title text-base font-medium uppercase">
-        folio &apos;25
-      </div>
+      <div className="font-title text-base font-medium uppercase">my name</div>
       <MenuToggle toggle={toggle} setToggle={setToggle} />
       <AnimatePresence mode={"wait"}>
         {toggle && <NavMenu setToggle={setToggle} />}
