@@ -1,11 +1,20 @@
-import React from "react";
-import ContactTitle from "@/components/contact/contact-title";
+import React, { useState } from "react";
+import ContactDetails from "@/components/contact/contact-details";
+import { AnimatePresence } from "motion/react";
+import ContactForm from "@/components/contact/contact-form";
 
 const ContactContent = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
-    <div className="flex h-full w-full flex-col justify-between gap-5">
-      <ContactTitle />
-      form here
+    <div className="h-full w-full">
+      <AnimatePresence mode={"wait"}>
+        {toggle ? (
+          <ContactForm setToggle={setToggle} key={1} />
+        ) : (
+          <ContactDetails setToggle={setToggle} key={2} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

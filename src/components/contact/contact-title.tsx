@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import fitty from "fitty";
 
-const ContactTitle = () => {
+const ContactTitle = ({ children }: { children: string }) => {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,10 +23,18 @@ const ContactTitle = () => {
       <motion.div
         ref={textRef}
         initial={{ y: "100%", opacity: 0.5 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          transition: { duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0 },
+        }}
+        exit={{
+          y: "-100%",
+          opacity: 0.5,
+          transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0 },
+        }}
       >
-        get in touch
+        {children}
       </motion.div>
     </div>
   );
